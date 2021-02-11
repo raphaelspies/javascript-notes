@@ -14,7 +14,7 @@
 1. Parameter: When defining a function `function addTwo(parameters)`  
 2. Argument: When calling a function `var callFunction = addTwo(arguments)`
 
-```
+```javascript
 function addTwo(parameters) { //define function with parameters
 return 0;
 }
@@ -32,7 +32,7 @@ var callFunction = addTwo(arguments); //call function using arguments
 An object is a data type composed of methods and key:value pairs. Object contents are always wrapped in curly braces.<br>
 Syntax:
 
-```
+```javascript
 var newObject = {
 firstkey:1, secondkey:2
 };
@@ -55,7 +55,7 @@ firstkey:1, secondkey:2
 
 1. Not (!)  
 Returns the opposite of the operand
-```
+```javascript
 var sense = true;
 // to describe nonsense
 var nonsense = !sense;
@@ -67,7 +67,7 @@ console.log('not nonsense:', notNonsense);
 
 2.  Or (||)  
 If either value is true, then returns true
-```
+```javascript
 console.log(true || true); // will log true
 console.log(true || false); // will log true
 console.log(false || true); // will log true
@@ -75,7 +75,7 @@ console.log(false || false); // will log false
 ```
 3. And (&&)  
 Will only return true if BOTH are true
-```
+```javascript
 console.log(true && true); // will log true
 console.log(true && false); // will log false
 console.log(false && true); // will log false
@@ -91,7 +91,7 @@ var undefinedMatch = declared === undefined;
 console.log('undefinedMatch:',undefinedMatch);
 
 In the case of Booleans:
-```
+```javascript
 var isRaining = true;
 var weatherPredictedRain = true;
 
@@ -99,7 +99,7 @@ var weathermanWasRight = isRaining === weatherPredictedRain;
 console.log('weathermanWasRight:', weathermanWasRight);
 ```
 In the case of Numbers:
-```
+```javascript
 var expectedCount = 10;
 var actualCount = 9;
 
@@ -107,7 +107,7 @@ var expectationsMet = expectedCount === actualCount;
 console.log('expectationsMet:', expectationsMet);
 ```
 In the case of Strings:
-```
+```javascript
 var currentString = 'happiness';
 var nextString = 'happiness';
 
@@ -134,7 +134,7 @@ Returns true if the two operands are different
 13. Round down `Math.floor()`
 14. Parse a number from a string: `Number.parseInt()`
 15. Parse a float from a string: `Number.parseFloat()`
-```
+```javascript
 var userIdString = "49";
 var parsedUserId = Number.parseInt(userIdString);
 console.log("parsedUserId:", parsedUserId);
@@ -146,7 +146,7 @@ console.log('parsedUserRating:', parsedUserRating);
 16. Random number: `Math.random()` - generates a random float between 0 and 1
 
 Random Number between a min and max:
-```
+```javascript
 function generateRandomNumber(min, max) {
 var result;  // create a result variable
 result = Math.random() * (max - min) + min;  // assign it to formula for random number between min and max
@@ -178,20 +178,20 @@ If the query is not found, the method will return -1.
  8. To extract a slice of an array without affecting the subject, use the `.slice()` method. <br> Takes the following arguments: <br> `var returnSlice = subject.slice(starting element, up to but not including this element)`. If no parameters are given, then it will return the entire array.
  9. To concatenate two arrays, use the `.concat()` method. <br>Call the method ON the first array, and use the second array as an argument as such: <br>`var resultOfConcat1 = array1.concat(addArray2, addArray3);`. Can take infinite arrays to concatenate as arguments.
  10. To transform an array into a string, use the `.join()` method. <br> Call the method ON the first array, then use the "separator" as an argument (which will be inserted between each element): <br> 
- ```
+ ```javascript
  var result = ["words", "in", "string"].join("-");
  output: words-in-string
  ```
  11. To split a string into separate elements in an array, use the `.split()` method. 
  <br> Call the method ON the string, then use the "separator" as an argument (anywhere the method finds that element, it will split the string): <br> 
- ```
+ ```javascript
  var result = "words-in-string".split("-")
  output: ['words', 'in', 'string']
  ```
  12. To search for a particular element, use the `.indexOf()` method. <br> 
 Takes the following arguments: <br>
 `searchSubject.indexOf(search Criterion,starting Point)`
-```
+```javascript
 var indexOfElement = ['c', 'a', 'b', 'c', 'd'].indexOf('c',2);
 output: 3
 ```
@@ -205,7 +205,7 @@ Template literals: if you use backticks in lieu of quotes, you can put the name 
 
 1. While loop: <br>
 While some condition is true, repeat some task. Iterate inside the loop.
-```
+```javascript
 function loopAnArray(array) {
     var index = 0;
     while (index < array.length) {
@@ -234,7 +234,7 @@ function loopAnArray(array) {
     They are followed by a statement to be executed in the loop
     Will often be referred to as a "for loop"
 
-```
+```javascript
 for (/*initialization*/ ; /*condition*/ ; /*final-expression*/ ) {
   /* statement */
 }
@@ -259,7 +259,7 @@ Technique for counting the number of unique elements in an array/object.
 <br> if the element is new (undefined in the counting object), it will instantiate with a value of 1.
 <br> if the element is a duplicate, the loop will add to the count of that element.
 
-```
+```javascript
 // an array of items to count
 var arrayOfItemsToCount = ['a', 'b', 'a', 'b', 'c', 'b'];
 // an object to store the counts
