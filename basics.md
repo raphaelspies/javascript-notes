@@ -1,13 +1,13 @@
-# H1 Javacript Basics
+# Javacript Basics
 
 1. Use curly braces and semicolons to delineate paragraphs and lines
 2. Declare variables using "var"  
 
 <h><b>Data types:</b></h>  
 
-3. <b>Number:</b> float, int, +Infinity, -Infinity (all same data type)
-4. <b>Bool:</b> True, False
-5. <b>String:</b> "words" (can be called as an array to return the character at that index)
+1. <b>Number:</b> float, int, +Infinity, -Infinity (all same data type)
+2. <b>Bool:</b> True, False
+3. <b>String:</b> "words" (can be called as an array to return the character at that index)
 
 <h><b>Parameters vs. arguments:</b></h>  
 
@@ -21,7 +21,7 @@ return 0;
 var callFunction = addTwo(arguments); //call function using arguments
 ```
 
-<h2><b>Objects:</b></h2>
+## Objects:
 
 1. An object is a collection of properties
 2. A property is an association between a name <b>(key)</b> and a <b>value</b> (some data type)
