@@ -280,3 +280,19 @@ for (var i = 0; i < arrayOfItemsToCount.length; i++) {
 }
 console.log(objectOfCounts);
 ```
+##Iterating through elements to see which is the shortest
+```javascript
+function findShortestOfThreeWords(word1, word2, word3) {
+    //create array with all words
+	var words = [word1, word2, word3];
+	//assign shortest to first word 
+	var shortest = word1;
+	//if subsequent element is shorter than the first, then update shortest
+	for (i = 0; i<words.length; i++) {
+		if (words[i].length < shortest.length) {
+			shortest = words[i];
+		}
+	}
+	return shortest;
+}
+```
