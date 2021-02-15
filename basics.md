@@ -253,7 +253,7 @@ for (/*initialization*/ ; /*condition*/ ; /*final-expression*/ ) {
 
 <h2><b>Iteration & Accumulation:</b></h2>
 
-<h2><b>Using an Object to Count Elements</b></h2>
+<h><b>Using an Object to Count Elements</b></h>
 Technique for counting the number of unique elements in an array/object.
 <br> using a loop to iterate through all the items in the array (or object).
 <br> if the element is new (undefined in the counting object), it will instantiate with a value of 1.
@@ -280,7 +280,7 @@ for (var i = 0; i < arrayOfItemsToCount.length; i++) {
 }
 console.log(objectOfCounts);
 ```
-##Iterating through elements to see which is the shortest
+# Iterating through elements to see which is the shortest
 ```javascript
 function findShortestOfThreeWords(word1, word2, word3) {
     //create array with all words
