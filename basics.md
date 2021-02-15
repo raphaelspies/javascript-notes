@@ -253,7 +253,7 @@ for (/*initialization*/ ; /*condition*/ ; /*final-expression*/ ) {
 
 <h2><b>Iteration & Accumulation:</b></h2>
 
-<h><b>Using an Object to Count Elements</b></h>
+### Using an Object to Count Elements
 Technique for counting the number of unique elements in an array/object.
 <br> using a loop to iterate through all the items in the array (or object).
 <br> if the element is new (undefined in the counting object), it will instantiate with a value of 1.
