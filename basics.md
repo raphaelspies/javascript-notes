@@ -356,3 +356,21 @@ extend(obj1, obj2);
 console.log(obj1); // --> {a: 1, b: 2, c: 3}
 console.log(obj2); // --> {b: 4, c: 3}
 ```
+
+Iterating through elements to see which is the shortest
+
+```javascript
+function findShortestOfThreeWords(word1, word2, word3) {
+    //create array with all words
+	var words = [word1, word2, word3];
+	//assign shortest to first word 
+	var shortest = word1;
+	//if subsequent element is shorter than the first, then update shortest
+	for (i = 0; i<words.length; i++) {
+		if (words[i].length < shortest.length) {
+			shortest = words[i];
+		}
+	}
+	return shortest;
+}
+```
