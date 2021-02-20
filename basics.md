@@ -21,37 +21,13 @@ return 0;
 var callFunction = addTwo(arguments); //call function using arguments
 ```
 
-## Objects:
+# Scope: Global vs. Local
+<b>Global variables: </b>usable throughout the program <br>
+<b>Local variables: </b> usable only within that particular scope (object, function, etc.)
 
-1. An object is a collection of properties
-2. A property is an association between a name <b>(key)</b> and a <b>value</b> (some data type)
-3. A property's value can be any of the types we have gone over, as well as being another object, or even a function
-4. In the case where the value of a property is a function, we refer to the property as a <b>method</b>  
-5. Arrays are a type of object
+# Operators & Methods:
 
-An object is a data type composed of methods and key:value pairs. Object contents are always wrapped in curly braces.<br>
-Syntax:
-
-```javascript
-var newObject = {
-firstkey:1, secondkey:2
-};
-```
-
-<h><b>Accessing the Value of a Property</b></h>
-    
-1. We need to know the name of the <b>object</b>, and the name of the <b>key</b> (both do the same thing):
-3. Can use <b>"dot notation":</b> `var valueOfName = stringsObj.name;`
-4. Can use <b>"bracket notation":</b>`var valueOfName = stringsObj['name'];`
-
-<h><b>Object Methods & Operators</b></h>
-1. `typeof`: operator that returns what data type of the called variable is
-2. Since arrays are a type of object, in order to return whether a variable is an array or not, use method `Array.isArray()` (returns a true/false value)
-3. to remove an key:value pair, use `delete arrayName[key];`
-4. `Object.keys()` returns an array whose elements are strings corresponding to the enumerable properties found directly upon object. The ordering of the properties is the same as that given by looping over the properties of the object manually.
-5. `Object.values()` returns an array whose elements are the enumerable property values found on the object. The ordering of the properties is the same as that given by looping over the property values of the object manually.
-
-<h2><b>Operators & Methods:</b></h2>
+## Logical Operators: 
 
 1. Not (!)  
 Returns the opposite of the operand
@@ -117,7 +93,7 @@ console.log('stringsMatch:', stringsMatch);
 5. Not Equal (!==)  
 Returns true if the two operands are different 
 
-<h><b>Mathematical Operators:</b></h>
+## Mathematical Operators:
 
 1. Plus `+`
 2. Minus `-`
@@ -155,8 +131,72 @@ return result;  // return result
 ```
 17. Greater than `>` and Greater than or Equal to `>=`
 18. Less than `<` and Less than or Equal to `<=`
+19. Math.PI - gives you the value of pi (not a function; takes no parameters.)
+```javascript
+var areaOfCircle = Math.PI * r ** 2 //gives you pi r^2
+```
 
-<h2><b>Strings:</b></h2>
+# Objects:
+
+1. An object is a collection of properties
+2. A property is an association between a name <b>(key)</b> and a <b>value</b> (some data type)
+3. A property's value can be any of the types we have gone over, as well as being another object, or even a function
+4. In the case where the value of a property is a function, we refer to the property as a <b>method</b>  
+5. Arrays are a type of object
+
+An object is a data type composed of methods and key:value pairs. Object contents are always wrapped in curly braces.<br>
+Syntax:
+
+```javascript
+var newObject = {
+firstkey:1, secondkey:2
+};
+```
+
+## Adding a value to an object
+For an object that looks like this:
+```javascript
+var obj = {
+    key1: value1,
+    key2: value2
+};
+```
+1. If you know the name of the value to be added, use **dot notation**:
+```javascript
+obj.key3 = "value3";
+```
+
+2. If you want the name of a property "dynamically determined" (for instance, when you're returning a value you don't know the name of), use **bracket notation**:
+```javascript
+obj["key3"] = "value3";
+```
+Example of a "dynamically determined" use:
+```javascript
+var getProperty = function (propertyName) {
+    return obj[propertyName];
+};
+
+getProperty("key1");
+getProperty("key2");
+getProperty("key3");
+```
+(borrowed from stackOverflow)
+
+
+<h><b>Accessing the Value of a Property</b></h>
+    
+1. We need to know the name of the <b>object</b>, and the name of the <b>key</b> (both do the same thing):
+3. Can use <b>"dot notation":</b> `var valueOfName = stringsObj.name;`
+4. Can use <b>"bracket notation":</b>`var valueOfName = stringsObj['name'];`
+
+<h><b>Object Methods & Operators</b></h>
+1. `typeof`: operator that returns what data type of the called variable is. Proper syntax: `if (typeof obj[value] === "number") { ...`
+2. Since arrays are a type of object, in order to return whether a variable is an array or not, use method `Array.isArray()` (returns a true/false value). Proper syntax: `if (Array.isArray(objectName[keyOfArrayInObjectName])) { ...`
+3. to remove an key:value pair, use `delete arrayName[key];`
+4. `Object.keys()` returns an array whose elements are strings corresponding to the enumerable properties found directly upon object. The ordering of the properties is the same as that given by looping over the properties of the object manually.
+5. `Object.values()` returns an array whose elements are the enumerable property values found on the object. The ordering of the properties is the same as that given by looping over the property values of the object manually.
+
+# Strings:
 
 1. To get the length of a string, call the `.length` property (NOT a method, since it's a property, not a function)
 2. To get a slice of a string with a defined start and/or end, use the `.substring()` method. Takes two arguments: (1) starting index, and (2) ending index.
@@ -165,7 +205,7 @@ If the query is not found, the method will return -1.
 4. To convert a different data type TO a string, us the `.toString()` method. Takes NO arguments, so proper syntax is `var stringVersion = parameter.toString()` (unless you want a binary[2], octal[8], or hex[16] value; in this case, it will convert the number to the appropriate base, THEN change the type to string).
 
 
-<h2><b>Arrays:</b></h2>
+# Arrays:
 
 1. Can use `.length`
 2. To add an element to the back of the array, use the `.push()` method
@@ -201,9 +241,9 @@ Template literals: if you use backticks in lieu of quotes, you can put the name 
 
 > `inside this string, you can use ${variableName}`
 
-<h2><b>Loops:</b></h2>
+# Loops:
 
-1. While loop: <br>
+## 1. While loop: <br>
 While some condition is true, repeat some task. Iterate inside the loop.
 ```javascript
 function loopAnArray(array) {
@@ -216,7 +256,7 @@ function loopAnArray(array) {
 }
 ```
 
-2. For loop: <br>
+## 2. For loop: <br>
 
     The for statement creates a loop that consists of three optional expressions <br>
         
@@ -240,18 +280,14 @@ for (/*initialization*/ ; /*condition*/ ; /*final-expression*/ ) {
 }
 ```
 
-3. For...in loop:<br>
+## 3. For...in loop:<br>
 
     A quick way to <b> iterate over an object</b> is to use a for...in loop: `for (i in object) {...}`
     <br> This calls the loop once `for` each {element} `in` an {object}.  
     No iteration (i++) is required.  
     Not recommended for strings or numbers; mainly used for objects.
 
-<h2><b>Scope: Global vs. Local</b></h2>
-<b>Global variables: </b>usable throughout the program <br>
-<b>Local variables: </b> usable only within that particular scope (object, function, etc.)
-
-<h2><b>Iteration & Accumulation:</b></h2>
+# Iteration & Accumulation:
 
 <h2><b>Using an Object to Count Elements</b></h2>
 Technique for counting the number of unique elements in an array/object.
@@ -260,23 +296,63 @@ Technique for counting the number of unique elements in an array/object.
 <br> if the element is a duplicate, the loop will add to the count of that element.
 
 ```javascript
-// an array of items to count
-var arrayOfItemsToCount = ['a', 'b', 'a', 'b', 'c', 'b'];
-// an object to store the counts
-var objectOfCounts = {};
-
-// we loop over the array of items to count
-for (var i = 0; i < arrayOfItemsToCount.length; i++) {
-  var currentItem = arrayOfItemsToCount[i];
-  // if we have not counted current item
-  if (objectOfCounts[currentItem] === undefined) {
-    // add it to count object with a value of 1
-    objectOfCounts[currentItem] = 1;
-  // otherwise (we have counted it at least once)
-  } else {
-    // increment value in count object by 1
-    objectOfCounts[currentItem]++;
-  }
+function countWords(str) {
+    //edge case: if the input is empty, return an empty object
+	if (str === "") {
+		return {};
+	}
+  // split string at every space into an array
+	var splitString = str.split(" ");
+	//create a new object to iterate into
+	var countObject = {};
+	//create a loop to iterate through the array
+	for (i in splitString) {
+		currentElement = splitString[i];
+		//for every element in the array, if that element is NOT a key in the object (undefined), create a new element in that array with value 1
+		if (countObject[currentElement] === undefined) {
+			countObject[currentElement] = 1;
+		}
+		//if that element IS in the object, iterate the value
+		else {
+			countObject[currentElement]++;
+		}
+	}
+	return countObject;
 }
-console.log(objectOfCounts);
+```
+
+## Copying unique elements into another array
+Given two objects, "extend" adds properties from the 2nd object to the 1st object. <br>
+Add any keys that are not in the 1st object. <br>
+If the 1st object already has a given key, ignore it (do not overwrite the property value). <br>
+Do not modify the 2nd object at all.
+
+```javascript
+function extend(obj1, obj2) {
+	//read each element in obj2 to see if it's in obj1
+  for (var keyFromObj2 in obj2) {
+		//if obj2[keyFromObj2] is not in obj1 (is undefined), then
+		if (obj1[keyFromObj2] === undefined) {
+		//initialize it in obj1, by reading the value at the key in obj2
+			obj1[keyFromObj2] = obj2[keyFromObj2];
+		}
+	}
+	//else, do nothing
+	//return obj2.	
+	return obj1;
+}
+
+var obj1 = {
+  a: 1,
+  b: 2
+};
+var obj2 = {
+  b: 4,
+  c: 3
+};
+
+extend(obj1, obj2);
+
+console.log(obj1); // --> {a: 1, b: 2, c: 3}
+console.log(obj2); // --> {b: 4, c: 3}
 ```
